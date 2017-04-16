@@ -32,7 +32,5 @@ public class Shoot : MonoBehaviour {
         //instanciatedGo.transform.Translate(direction * Time.deltaTime * speed);
 
     }
-
-    
-
+		
 }

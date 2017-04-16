@@ -22,7 +22,7 @@ public class ShootTheWE : MonoBehaviour {
 	void Start () 
 	{
 		target = GameObject.FindWithTag("Player").transform;
-		InvokeRepeating("Projectile", 0.0f, 1.0f / fireRate);
+//		InvokeRepeating("Projectile", 0.0f, 1.0f / fireRate);
 	
 	}
 

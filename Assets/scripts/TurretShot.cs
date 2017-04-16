@@ -1,36 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class TurretShot : MonoBehaviour {
 
 
 	Animator animator;
 
-
 	private Transform target;
 	public int movementSpeed;
 	public int rotatationSpeed;
-
-
 	public float rotateSpeed;
 	private bool targeted = false;
 	public bool door = false;
 	private int currentPoint;
+
 
 	void Start () 
 	{
 		target = GameObject.Find("hammerboy").transform;
 
 		animator = GetComponent<Animator>();
-
-
-
 	}
 
 	void Update () 
 	{
-
-
 
 		if(targeted == false)
 		{
@@ -53,4 +47,7 @@ public class TurretShot : MonoBehaviour {
 
 			animator.SetBool("door",true);         
 
-		} } } 
+		} 
+	} 
+
+} 

@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyHitReaction : MonoBehaviour {
 
-    public float repeatRate;
+    public float repeatRate = 2;
     public float CountZero;
-    public GameObject Blob;
-    
+//    public GameObject Blob;
+	private SpriteRenderer sRender;
+
+	private void Start() {
+		sRender = GetComponent<SpriteRenderer> ();
+	}
 
 	void ColorSwitch()
     {
-	    SpriteRenderer sRender = GetComponent<SpriteRenderer>();
-
 	    if (sRender.material.color == Color.white)
 	    {
 	        sRender.material.color = Color.red;
@@ -23,22 +26,25 @@ public class EnemyHitReaction : MonoBehaviour {
 	    }
     }
 
-    
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
+		Debug.Log ("collide");
         if (collision.gameObject.tag == "Bullet")
         {
             InvokeRepeating("ColorSwitch", 0, repeatRate);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
-        SpriteRenderer sRender = GetComponent<SpriteRenderer>();
+		Debug.Log ("collide");
         CancelInvoke();
         sRender.material.color = Color.white;
 
     }
+
+	void OnParticleCollision(GameObject other) {
+		Debug.Log (other);
+		
+	}
 }
