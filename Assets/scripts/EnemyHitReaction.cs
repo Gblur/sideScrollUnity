@@ -7,30 +7,21 @@ public class EnemyHitReaction : MonoBehaviour {
     public float repeatRate;
     public float CountZero;
     public GameObject Blob;
-        
-	
-	
+    
+
 	void ColorSwitch()
     {
+	    SpriteRenderer sRender = GetComponent<SpriteRenderer>();
 
-        
-        
-            SpriteRenderer sRender = GetComponent<SpriteRenderer>();
-
-
-
-            if (sRender.material.color == Color.white)
-            {
-
-                sRender.material.color = Color.red;
-            }
-            else
-            {
-
-                sRender.material.color = Color.white;
-
-            }
-        }
+	    if (sRender.material.color == Color.white)
+	    {
+	        sRender.material.color = Color.red;
+	    }
+	    else
+	    {
+	        sRender.material.color = Color.white;
+	    }
+    }
 
     
 
@@ -50,6 +41,4 @@ public class EnemyHitReaction : MonoBehaviour {
         sRender.material.color = Color.white;
 
     }
-
-
 }
