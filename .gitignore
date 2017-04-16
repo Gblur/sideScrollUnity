@@ -33,7 +33,14 @@ sysinfo.txt
 ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
-*.mat
-*.mat.meta
+*.shader
 ProjectSettings.asset
 *.controller
+
+
+
+## Unwanted Folders for SrcControl ##
+## Standard Assets // this can be imported immediatly ##
+
+/Assets/Standard\ Assets/
+/Assets/TheTopicbirdTools/
