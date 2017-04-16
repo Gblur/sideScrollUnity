@@ -9,42 +9,38 @@ public class EnemyHitReaction : MonoBehaviour {
     public float CountZero;
 //    public GameObject Blob;
 	private SpriteRenderer sRender;
+	private float now;
+	private float delta;
 
 	private void Start() {
 		sRender = GetComponent<SpriteRenderer> ();
 	}
 
-	void ColorSwitch()
+	private void ColorSwitch()
     {
-	    if (sRender.material.color == Color.white)
-	    {
-	        sRender.material.color = Color.red;
-	    }
-	    else
-	    {
-	        sRender.material.color = Color.white;
-	    }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-		Debug.Log ("collide");
-        if (collision.gameObject.tag == "Bullet")
-        {
-            InvokeRepeating("ColorSwitch", 0, repeatRate);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-		Debug.Log ("collide");
-        CancelInvoke();
-        sRender.material.color = Color.white;
-
+		if (sRender.material.color == Color.white) {
+			sRender.material.color = Color.red;
+		} else {
+			sRender.material.color = Color.white;
+		}
     }
 
 	void OnParticleCollision(GameObject other) {
-		Debug.Log (other);
+		Debug.Log (other.tag);
+
+		if (other.tag == "Bullet")
+		{
+			now = Time.time;
+			delta = now + 0.2F;
+			InvokeRepeating ("ColorSwitch", 0, 0.01F);
+		}	
+	}
+
+	void Update(){
 		
+		if (delta > 0 && Time.time > delta) {
+			CancelInvoke ();
+			sRender.material.color = Color.white;
+		}
 	}
 }
