@@ -10,14 +10,10 @@ public class FishAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-       
-
-
 	}
 
     private void FixedUpdate()
     {
-
         transform.position = new Vector3(0f,(Mathf.PingPong(Time.time * acceleration, 13)),0.25f);                
     }
 

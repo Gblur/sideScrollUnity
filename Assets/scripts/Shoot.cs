@@ -15,8 +15,6 @@ public class Shoot : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         // Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-
-    
         
     }
 
@@ -28,7 +26,7 @@ public class Shoot : MonoBehaviour {
     }
 
     
-     private void Update()
+    private void Update()
     {
 
         //instanciatedGo.transform.Translate(direction * Time.deltaTime * speed);

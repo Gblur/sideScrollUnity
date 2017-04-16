@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class ShootTheWE : MonoBehaviour {
 
-
 	Animator animator;
-
-
 	private Transform target;
 	public int movementSpeed;
 	public int rotatationSpeed;
@@ -20,23 +18,16 @@ public class ShootTheWE : MonoBehaviour {
 	public float fireRate;
 	private float nextFire;
 
+
 	void Start () 
 	{
 		target = GameObject.FindWithTag("Player").transform;
 		InvokeRepeating("Projectile", 0.0f, 1.0f / fireRate);
-
-
 	
-
-
-
 	}
 
 	void Update ()
 	{
-
-
-
 		if (targeted == false && target != null ) {
 
 		
@@ -48,19 +39,16 @@ public class ShootTheWE : MonoBehaviour {
 			targeted = false;
 		}
 	}
-
-	
+		
 	void Projectile() {
 
 		if(targeted == true && target != null)
 		{
-
 			Rigidbody bullet = (Rigidbody) Instantiate(BulletPrefab, transform.position, transform.rotation);
 			bullet.velocity = transform.forward * Speed;
 
-
-
-
 		} 
-						} 
+						
 	} 
+
+} 
