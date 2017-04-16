@@ -5,7 +5,7 @@ using UnityEngine;
 public class FishAI : MonoBehaviour {
 
     public float acceleration; 
-    
+	public int hitpoints;
 
 	// Use this for initialization
 	void Start () {
