@@ -36,3 +36,4 @@ ehthumbs.db
 *.mat
 *.mat.meta
 ProjectSettings.asset
+*.controller
