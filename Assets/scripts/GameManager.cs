@@ -5,18 +5,25 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
 	public GameObject enemy;
+	private GameObject[] enemies;
 	// Use this for initialization
 	void Start () {
-		CreateEnemy ();
+		enemies = new GameObject[3];
+		for (int i = 0; i < enemies.Length; i++) {
+			GameObject clone = Instantiate (
+				enemy, 
+				new Vector2(0,i * 8), 
+				transform.rotation
+			);
+			enemies [i] = clone;
+		}
 	}
 
-	void CreateEnemy () {
-		enemy.transform.Translate (Vector2.left * Time.deltaTime * 1f);
-		Instantiate (enemy, transform.position, transform.rotation);
-	}
 
 	// Update is called once per frame
 	void Update () {
-		
+		foreach (GameObject enemy in enemies) {
+			enemy.transform.Translate (Vector2.left * Time.deltaTime * 5);
+		}
 	}
 }
