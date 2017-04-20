@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour {
 	public void gotHit(int damage) {
 		this.health -= damage;
 		Debug.Log (health);
-		if (this.health < 0) {
+		if (this.health <= 0) {
 			Destroy (this.gameObject);
 			this.setState (STATE_DEAD);		
 		}		
