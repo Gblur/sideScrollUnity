@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class EnemyHitReaction : MonoBehaviour {
@@ -11,9 +12,13 @@ public class EnemyHitReaction : MonoBehaviour {
 	private SpriteRenderer sRender;
 	private float now;
 	private float delta;
+    public Image healthBar;
+   
 
-	private void Start() {
+
+    private void Start() {
 		sRender = GetComponent<SpriteRenderer> ();
+        
 	}
 
 	private void ColorSwitch()
@@ -33,14 +38,17 @@ public class EnemyHitReaction : MonoBehaviour {
 			now = Time.time;
 			delta = now + 0.2F;
 			InvokeRepeating ("ColorSwitch", 0, 0.01F);
+            healthBar.fillAmount -= 0.2f;
 		}	
 	}
+  
 
-	void Update(){
+    void Update(){
 		
 		if (delta > 0 && Time.time > delta) {
 			CancelInvoke ();
 			sRender.material.color = Color.white;
 		}
+       
 	}
 }
