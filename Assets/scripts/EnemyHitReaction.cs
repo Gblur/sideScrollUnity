@@ -6,16 +6,13 @@ using UnityEngine.UI;
 
 public class EnemyHitReaction : MonoBehaviour {
 
-    public float repeatRate = 2;
+	private float repeatRate = 2;
     public float CountZero;
 //    public GameObject Blob;
 	private SpriteRenderer sRender;
 	private float now;
 	private float delta;
-    public Image healthBar;
-   
-
-
+    
     private void Start() {
 		sRender = GetComponent<SpriteRenderer> ();
         
@@ -38,10 +35,8 @@ public class EnemyHitReaction : MonoBehaviour {
 			now = Time.time;
 			delta = now + 0.2F;
 			InvokeRepeating ("ColorSwitch", 0, 0.01F);
-            healthBar.fillAmount -= 0.2f;
 		}	
 	}
-  
 
     void Update(){
 		
