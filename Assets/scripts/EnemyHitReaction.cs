@@ -31,7 +31,7 @@ public class EnemyHitReaction : MonoBehaviour {
     }
 
 	void OnParticleCollision(GameObject other) {
-		Debug.Log (other.tag);
+//		Debug.Log (other.tag);
 
 		if (other.tag == "Bullet")
 		{
