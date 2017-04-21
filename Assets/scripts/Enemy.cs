@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour {
 	public int attackPower;
 	public int attackRate;
 
+
 	private string state = "uninitialized";
+
 
 	const string STATE_ALIVE = "alive";
 	const string STATE_DEAD = "dead";
@@ -25,10 +27,9 @@ public class Enemy : MonoBehaviour {
 
 	public void gotHit(int damage) {
 		this.health -= damage;
-		Debug.Log (health);
+//		Debug.Log (health);
 		if (this.health <= 0) {
-			Destroy (this.gameObject);
-			this.setState (STATE_DEAD);		
+			this.setState (STATE_DEAD);
 		}		
 	}
 
@@ -36,8 +37,7 @@ public class Enemy : MonoBehaviour {
 		this.state = state;
 		switch (state) {
 		case STATE_DEAD:
-			
-
+			Destroy (this.gameObject);
 			break;
 		}
 	}
