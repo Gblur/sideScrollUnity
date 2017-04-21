@@ -8,8 +8,13 @@ public class EnemyHitReaction : MonoBehaviour {
 
 	private float repeatRate = 2;
     public float CountZero;
-//    public GameObject Blob;
+
+	public GameObject explosion;
+	private GameObject explosionInstance;
+	private float explosionDeltaTime;
+
 	private SpriteRenderer sRender;
+
 	private float now;
 	private float delta;
     
@@ -32,9 +37,21 @@ public class EnemyHitReaction : MonoBehaviour {
 
 		if (other.tag == "Bullet")
 		{
+			// Create the flickering if the object collides.
 			now = Time.time;
 			delta = now + 0.2F;
 			InvokeRepeating ("ColorSwitch", 0, 0.01F);
+
+			// If explosion is set create an instance of explosion 
+			// and start animation for a lifetime.
+			if (explosion) {
+				this.explosionDeltaTime = now + explosion.GetComponent<ParticleSystem> ().startLifetime;
+				this.explosionInstance = Instantiate (
+					explosion, 
+					this.gameObject.transform.position, 
+					this.gameObject.transform.rotation
+				);
+			}
 		}	
 	}
 
@@ -44,6 +61,16 @@ public class EnemyHitReaction : MonoBehaviour {
 			CancelInvoke ();
 			sRender.material.color = Color.white;
 		}
+
+		if (explosionDeltaTime > 0 && Time.time > explosionDeltaTime) {
+			Destroy (explosionInstance);
+		}
        
+	}
+
+	void OnDestroy () {
+		// cleanup
+		CancelInvoke ();
+		Destroy (explosionInstance, explosion.GetComponent<ParticleSystem> ().startLifetime);
 	}
 }
