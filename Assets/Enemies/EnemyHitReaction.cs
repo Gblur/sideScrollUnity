@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class EnemyHitReaction : MonoBehaviour {
 
-	private float repeatRate = 2;
     public float CountZero;
 
 	public GameObject explosion;
