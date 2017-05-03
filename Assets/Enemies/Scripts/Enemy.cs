@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class Enemy : MonoBehaviour {
 	public int health = 100;
 	public int attackPower;
 	public int attackRate;
+    
 
 
 	private string state = "uninitialized";
@@ -25,15 +27,17 @@ public class Enemy : MonoBehaviour {
 
 	}
 
-	public void gotHit(int damage) {
+	public virtual void gotHit(int damage) {
+        
 		this.health -= damage;
+       
 //		Debug.Log (health);
 		if (this.health <= 0) {
 			this.setState (STATE_DEAD);
 		}		
 	}
 
-	private void setState(string state) {
+	public void setState(string state) {
 		this.state = state;
 		switch (state) {
 		case STATE_DEAD:
@@ -42,9 +46,14 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	void OnParticleCollision(GameObject other) {
+    internal void move(Vector2 vector2, object p)
+    {
+        throw new NotImplementedException();
+    }
+    // Hero AttackDamage on Collision 
+    void OnParticleCollision(GameObject other) {
 		// Debug.Log ("Hit");
-		this.gotHit (50);
+		this.gotHit(10);
 	}
 
 	public void move(Vector2 coords) {
@@ -52,4 +61,5 @@ public class Enemy : MonoBehaviour {
 			this.gameObject.transform.Translate (coords);
 		}
 	}
+    
 }
