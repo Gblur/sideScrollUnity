@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: 6fa622988ac462440b422cd7de32f8aa
-timeCreated: 1492014397
+guid: c3040e81452ff8b49b31c8588921025d
+timeCreated: 1495230541
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: robotfishparts2_head
-    21300002: robotfishparts2_Eye
-    21300004: robotfishparts2_Chin
-    21300006: robotfishparts2_FirstTorso
-    21300008: robotfishparts2_2ND_Torso
-    21300010: robotfishparts2_Tail
+    21300000: Down_2nd_Frame
+    21300002: Down_1st_Frame
+    21300004: Idle
+    21300006: Up_1st_Frame
+    21300008: Up_2nd_Frame
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -41,14 +40,14 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -76,80 +75,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robotfishparts2_head
+      name: Down_2nd_Frame
       rect:
         serializedVersion: 2
-        x: 1510
-        y: 1940
-        width: 760
-        height: 472
-      alignment: 9
-      pivot: {x: 0.90711635, y: 0.19151694}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: robotfishparts2_Eye
-      rect:
-        serializedVersion: 2
-        x: 924
-        y: 1837
-        width: 161
-        height: 160
+        x: 11
+        y: 153
+        width: 673
+        height: 753
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: robotfishparts2_Chin
+      name: Down_1st_Frame
       rect:
         serializedVersion: 2
-        x: 96
-        y: 84
-        width: 1008
-        height: 606
-      alignment: 9
-      pivot: {x: 0.9286672, y: 0.8492126}
+        x: 738
+        y: 63
+        width: 635
+        height: 878
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: robotfishparts2_FirstTorso
+      name: Idle
       rect:
         serializedVersion: 2
-        x: 98
-        y: 827
-        width: 735
-        height: 782
-      alignment: 9
-      pivot: {x: 0.06887111, y: 0.23735978}
+        x: 1438
+        y: 77
+        width: 602
+        height: 850
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: robotfishparts2_2ND_Torso
+      name: Up_1st_Frame
       rect:
         serializedVersion: 2
-        x: 1557
-        y: 1018
-        width: 671
-        height: 620
-      alignment: 9
-      pivot: {x: 0.059022, y: 0.86206406}
-      border: {x: 0, y: 3, z: 0, w: 0}
+        x: 2134
+        y: 188
+        width: 612
+        height: 693
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: robotfishparts2_Tail
+      name: Up_2nd_Frame
       rect:
         serializedVersion: 2
-        x: 1181
-        y: 87
-        width: 656
-        height: 834
-      alignment: 9
-      pivot: {x: 0.9099211, y: 0.95930505}
+        x: 2857
+        y: 108
+        width: 626
+        height: 739
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

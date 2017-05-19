@@ -4,35 +4,51 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour {
 
-	private Vector2 moveUp;
+	
 	public int movementSpeed = 100;
+    public Animator moveAnim;
+    private float axisX;
+    private float axisY;
 
-
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start () {
+        moveAnim = GetComponent<Animator>();
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		float move = movementSpeed * Time.deltaTime;
+        axisX = Input.GetAxis("Horizontal");
+        axisY = Input.GetAxis("Vertical");
 
-		if (Input.GetKey (KeyCode.D)) {
+
+        if (axisX > 0f)
+        {
 //			Debug.Log ("up");
 			transform.Translate (Vector2.right * move);
 		}
 	
-		if (Input.GetKey (KeyCode.A)) {
+		if (axisX < 0f)
+        {
 			transform.Translate (Vector2.left * move);
 		}
 				
-		if (Input.GetKey (KeyCode.W)) {
-			transform.Translate (Vector2.up * move);
+		if (axisY > 0f) {
+		    transform.Translate (Vector2.up * move);
+            moveAnim.SetFloat("Ymove", axisY);
+            
 		}
 			
-		if (Input.GetKey (KeyCode.S)) {
+		if (axisY < 0f) {
 			transform.Translate (Vector2.down * move);
+            moveAnim.SetFloat("Ymove", axisY);
+
+        
+
+
+           // Debug.Log(axisY);
 		}
 	}
 }
