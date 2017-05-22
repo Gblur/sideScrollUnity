@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     
     public AnimationCurve xCurve;
 	public Enemy enemy;
+    public Enemy otherEnemy;
 	private Enemy[] enemies;
     public float Yrange = .5f;
     public int EnemySpeed = 5;
