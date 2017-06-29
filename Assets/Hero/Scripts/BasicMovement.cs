@@ -37,13 +37,13 @@ public class BasicMovement : MonoBehaviour {
 				
 		if (axisY > 0f) {
 		    transform.Translate (Vector2.up * move);
-            moveAnim.SetFloat("Ymove", axisY);
+            moveAnim.SetFloat("yMove", axisY);
             
 		}
 			
 		if (axisY < 0f) {
 			transform.Translate (Vector2.down * move);
-            moveAnim.SetFloat("Ymove", axisY);
+            moveAnim.SetFloat("yMove", axisY);
 
         
 
