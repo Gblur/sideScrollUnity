@@ -58,15 +58,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        float YPos = xCurve.Evaluate(Time.time) * Yrange;
-
-
-        foreach (Enemy enemy in enemies)
-        {
-
-            enemy.move(new Vector2(-1 * Time.deltaTime * EnemySpeed, YPos));
+		
+		// @todo kill objects if they're out of the canvas
+        foreach (Enemy enemy in enemies) {
+            enemy.move (Vector2.left * Time.deltaTime * 5);
         }
     }
 }

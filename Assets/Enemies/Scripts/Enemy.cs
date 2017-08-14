@@ -65,7 +65,11 @@ public class Enemy : MonoBehaviour {
 
 	public void move(Vector2 coords) {
 		if (this.state != STATE_DEAD) {
-			this.gameObject.transform.Translate(coords);
+			
+    		float Yrange = .5f;
+        	float YPos = xCurve.Evaluate(Time.time) * Yrange;
+
+			this.gameObject.transform.Translate(coords.up = YPos);
 		}
 	}
     private void Update()
