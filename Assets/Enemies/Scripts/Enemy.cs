@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour {
 	public void Start(){
 		this.name = name;
 		this.setState (STATE_ALIVE);
-
+		this.born = DateTime.Now;
 	}
     void Space()
     {
@@ -34,6 +34,10 @@ public class Enemy : MonoBehaviour {
                 }
 
     }
+
+	public DateTime getLifeTime() {
+		return DateTime.Now - this.born;
+	}
 
 	public virtual void gotHit(int damage) {
 		this.health -= damage;
@@ -67,7 +71,7 @@ public class Enemy : MonoBehaviour {
 		if (this.state != STATE_DEAD) {
 			
     		float Yrange = .5f;
-        	float YPos = xCurve.Evaluate(Time.time) * Yrange;
+			float YPos = xCurve.Evaluate(this.getLifeTime) * Yrange;
 			Vector2 pos = new Vector2 (coords.x, YPos);
 			this.gameObject.transform.Translate(pos);
 		}
