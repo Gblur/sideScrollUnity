@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour {
 	public int attackPower;
 	public int attackRate;
     public Vector2 space;
-
+	public AnimationCurve xCurve;
 
 	private string state = "uninitialized";
 
@@ -68,8 +68,8 @@ public class Enemy : MonoBehaviour {
 			
     		float Yrange = .5f;
         	float YPos = xCurve.Evaluate(Time.time) * Yrange;
-
-			this.gameObject.transform.Translate(coords.up = YPos);
+			Vector2 pos = new Vector2 (coords.x, YPos);
+			this.gameObject.transform.Translate(pos);
 		}
 	}
     private void Update()

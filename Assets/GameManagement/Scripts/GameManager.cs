@@ -6,12 +6,10 @@ public class GameManager : MonoBehaviour
 {
 
 
-    public AnimationCurve xCurve;
     public Enemy enemy;
     public Vector2 spawnValues;
     public Enemy otherEnemy;
     private Enemy[] enemies;
-    public float Yrange = .5f;
     public int EnemySpeed = 5;
     public float spawnWait = 5.0f;
     public float startWait;
@@ -61,6 +59,7 @@ public class GameManager : MonoBehaviour
 		
 		// @todo kill objects if they're out of the canvas
         foreach (Enemy enemy in enemies) {
+			
             enemy.move (Vector2.left * Time.deltaTime * 5);
         }
     }
