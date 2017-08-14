@@ -61,7 +61,7 @@ public class EnemyHitReaction : MonoBehaviour {
 			sRender.material.color = Color.white;
 		}
 
-		if (explosionDeltaTime > 0 && Time.time > explosionDeltaTime) {
+		if (explosionDeltaTime > 0 && Time.time < explosionDeltaTime) {
 			Destroy (explosionInstance);
 		}
        
@@ -70,6 +70,6 @@ public class EnemyHitReaction : MonoBehaviour {
 	void OnDestroy () {
 		// cleanup
 		CancelInvoke ();
-		Destroy (explosionInstance, explosion.GetComponent<ParticleSystem> ().startLifetime);
+		Destroy (explosionInstance, explosion.GetComponent<ParticleSystem>().startLifetime);
 	}
 }
