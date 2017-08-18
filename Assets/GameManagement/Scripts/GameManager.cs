@@ -5,64 +5,80 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-
     public Enemy enemy;
-    public Vector2 spawnValues;
-    public Enemy otherEnemy;
     private Enemy[] enemies;
-    public int EnemySpeed = 5;
-    public float spawnWait = 5.0f;
-    public float startWait;
-    public float WaveWait;
-    public float space = -47;
+    public float spawnWait = 1f;
+    public float startWait = 1;
+    public float waveWait = 6;
+    public int enemyCount = 0;
     // Use this for initialization
-
-
-
-
     void Start()
     {
-        
-        StartCoroutine(SpawnWaves());
+        // enemies = new Enemy[3];
+        // for (int i = 0; i < enemies.Length; i++)
+        // {
+        //     Enemy clone = Instantiate(
+        //         enemy,
+        //         new Vector2(10, i * 8),
+        //         transform.rotation
+        //     );
+        //     enemies[i] = clone;
+        // }
+        // StartCoroutine(SpawnWaves());
 
+        enemies = new Enemy[5];
     }
 
-    public IEnumerator SpawnWaves()
+    void spawnEnemies()
     {
-
-
-        yield return new WaitForSeconds(startWait);
-        while(Time.time < 20)
+        int timeInSeconds = (int)Time.realtimeSinceStartup;
+        if (timeInSeconds > enemyCount && enemyCount < enemies.Length)
         {
-            enemies = new Enemy[25];
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                Vector2 YSpace = new Vector2(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y));
-                Enemy clone = Instantiate(
-                    enemy,
-                    YSpace,
-                    transform.rotation
-                );
+            Enemy clone = Instantiate(
+                enemy,
+                new Vector2(10, 1 * 8),
+                transform.rotation
+            );
+            enemies[enemyCount] = clone;
+            enemyCount++;
+        }
+        
+    }
 
-                enemies[i] = clone;
+    IEnumerator SpawnWaves()
+    {
+        yield return new WaitForSeconds(startWait);
+        while (true)
+        {
+            for (int i = 0; i < enemyCount; i++)
+            {
+                Vector2 spawnPosition = new Vector2(10, i * 1);
+
+                Instantiate(enemy, spawnPosition, transform.rotation);
                 yield return new WaitForSeconds(spawnWait);
             }
-            yield return new WaitForSeconds(WaveWait);
+
+            yield return new WaitForSeconds(waveWait);
         }
-
     }
-
 
     // Update is called once per frame
     void Update()
     {
-		
-		// @todo kill objects if they're out of the canvas
-        foreach (Enemy enemy in enemies) {
-			
-            enemy.move (Vector2.left * Time.deltaTime * 5);
+        spawnEnemies();
+
+        try
+        {
+            // @todo kill objects if they're out of the canvas
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.move(Vector2.left * Time.deltaTime * 5);
+            }
         }
+        catch (System.NullReferenceException)
+        {
+            // throw;
+        }
+
     }
 }
-
-        

@@ -252,7 +252,7 @@ using System.Collections.Generic;
 		string directoryName = checkSaveDirectory();
 		string fileName = directoryName + getFileName (id);
 
-		Application.CaptureScreenshot (fileName, captureSizeMultiplier);
+		ScreenCapture.CaptureScreenshot (fileName, captureSizeMultiplier);
 
 		if (fallback) {
 			Debug.Log ("Fallback to Application.CaptureScreenshot because a GameObject without Camera (or Camera group) was used. Screenshot saved to: " + fileName);
