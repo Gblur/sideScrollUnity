@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float startWait = 1;
     public float waveWait = 6;
     public int enemyCount = 0;
+    public float speed;
     // Use this for initialization
     void Start()
     {
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             Enemy clone = Instantiate(
                 enemy,
-                new Vector2(10, 1 * 8),
+                new Vector2(37, 1 * 8),
                 transform.rotation
             );
             enemies[enemyCount] = clone;
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
             // @todo kill objects if they're out of the canvas
             foreach (Enemy enemy in enemies)
             {
-                enemy.move(Vector2.left * Time.deltaTime * 5);
+                enemy.move(Vector2.left * Time.deltaTime * speed);
             }
         }
         catch (System.NullReferenceException)
