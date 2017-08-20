@@ -7,16 +7,18 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-
     //	public string name = "Foo";
     public int health = 100;
     public int attackPower;
     public int attackRate;
     public Vector2 space;
     public AnimationCurve xCurve;
-
+    public ParticleSystem enemyFireBall;
+    public GameObject hero;
     private string state = "uninitialized";
-	private float born;	
+	private float born;
+    private bool targeted;
+    	
 
     const string STATE_ALIVE = "alive";
     const string STATE_DEAD = "dead";
@@ -27,7 +29,39 @@ public class Enemy : MonoBehaviour
         this.name = name;
         this.setState(STATE_ALIVE);
         this.born = Time.realtimeSinceStartup;
+        enemyFireBall.Emit(0);
+        InvokeRepeating("shoot", 0, 0.5f);
+
+
     }
+
+    void MeasureDistance()
+    {
+        hero = GameObject.FindGameObjectWithTag("Player");
+        Vector2 HeroPosition = hero.transform.position;
+        float Distance = Vector2.Distance(this.transform.position, HeroPosition);
+        if (Distance < 20)
+
+        {
+            targeted = true;
+        }
+       
+        
+        
+
+
+    }
+
+    void shoot()
+    {
+        if (targeted == true && hero != null)
+        {
+            enemyFireBall.Emit(1);
+        }
+
+
+    }
+
     void Space()
     {
         space = this.transform.position;
@@ -90,5 +124,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         Space();
+        MeasureDistance();
+       
     }
 }
