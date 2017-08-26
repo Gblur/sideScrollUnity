@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
     private string state = "uninitialized";
 	private float born;
     private bool targeted;
-    	
+    public float rotateSpeed = 5;
+
 
     const string STATE_ALIVE = "alive";
     const string STATE_DEAD = "dead";
@@ -38,13 +39,24 @@ public class Enemy : MonoBehaviour
     void MeasureDistance()
     {
         hero = GameObject.FindGameObjectWithTag("Player");
-        Vector2 HeroPosition = hero.transform.position;
+        Vector3 HeroPosition = hero.transform.position;
+        Quaternion HeroRot = hero.transform.rotation;
         float Distance = Vector2.Distance(this.transform.position, HeroPosition);
-        if (Distance < 20)
+
+
+        //Get Angle between enemy and Hero and set value on enemy's Z-Axis 
+        Vector3 targetDir = (transform.position - HeroPosition);
+        var angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //Debug.Log(angle);
+        //Debug.Log(dir);
+
+        if (Distance < 30)
 
         {
             targeted = true;
         }
+       
        
         
         
@@ -125,6 +137,8 @@ public class Enemy : MonoBehaviour
     {
         Space();
         MeasureDistance();
+        
+        
        
     }
 }
