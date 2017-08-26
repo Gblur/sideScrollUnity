@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour
         // }
         // StartCoroutine(SpawnWaves());
 
-        enemies = new Enemy[5];
+        enemies = new Enemy[10];
+       
+
     }
 
     void spawnEnemies()
@@ -67,10 +69,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         spawnEnemies();
+        
+
+       
 
         try
         {
-            // @todo kill objects if they're out of the canvas
+            
             foreach (Enemy enemy in enemies)
             {
                 enemy.move(Vector2.left * Time.deltaTime * speed);
