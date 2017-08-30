@@ -50,11 +50,14 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         //Debug.Log(angle);
         //Debug.Log(dir);
-
+        //Debug.Log(Distance);
         if (Distance < 30)
 
         {
             targeted = true;
+        }
+        else {
+            targeted = false;
         }
        
        

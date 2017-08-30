@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 30fea787ffd86ae4cb4a4d4c1abe2413
-timeCreated: 1492025958
+timeCreated: 1503863822
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,12 @@ TextureImporter:
     21300006: wellen2_lighter_Blue
     21300008: wellen2_Purple_dark
     21300010: wellen2_Pink
+    21300012: wellen2_0
+    21300014: wellen2_1
+    21300016: wellen2_2
+    21300018: wellen2_3
+    21300020: wellen2_4
+    21300022: wellen2_5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -46,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -72,11 +78,19 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wellen2_Blue
+      name: wellen2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -84,12 +98,12 @@ TextureImporter:
         width: 2047
         height: 459
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wellen2_Purple
+      name: wellen2_1
       rect:
         serializedVersion: 2
         x: 0
@@ -97,12 +111,12 @@ TextureImporter:
         width: 2047
         height: 410
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wellen2_lighter_Purple
+      name: wellen2_2
       rect:
         serializedVersion: 2
         x: 0
@@ -110,12 +124,12 @@ TextureImporter:
         width: 2047
         height: 360
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wellen2_lighter_Blue
+      name: wellen2_3
       rect:
         serializedVersion: 2
         x: 0
@@ -123,25 +137,25 @@ TextureImporter:
         width: 2047
         height: 272
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wellen2_Purple_dark
+      name: wellen2_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 264
+        y: 268
         width: 2047
         height: 194
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: wellen2_Pink
+      name: wellen2_5
       rect:
         serializedVersion: 2
         x: 0
@@ -149,7 +163,7 @@ TextureImporter:
         width: 2047
         height: 145
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
