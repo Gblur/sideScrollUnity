@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c3040e81452ff8b49b31c8588921025d
-timeCreated: 1495230541
+timeCreated: 1504204842
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,7 +16,7 @@ TextureImporter:
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
-    borderMipMap: 0
+    borderMipMap: 1
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -32,20 +32,20 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 32
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -56,7 +56,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 256
     textureFormat: -1
     textureCompression: 3
     compressionQuality: 50
@@ -64,7 +64,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 256
     textureFormat: -1
     textureCompression: 3
     compressionQuality: 50
@@ -72,7 +72,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 256
     textureFormat: -1
     textureCompression: 3
     compressionQuality: 50
@@ -93,7 +93,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -177.56787, y: 376.5}
+        - {x: -336.5, y: 341.30826}
+        - {x: -336.5, y: 113.265236}
+        - {x: -77.229, y: -346.276}
+        - {x: -1.1098526, y: -376.5}
+        - {x: 303.36673, y: -376.5}
+        - {x: 336.5, y: -159.69534}
+        - {x: 336.5, y: 376.5}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Down_1st_Frame
@@ -106,7 +114,23 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -310.3682, y: 439}
+        - {x: -317.28812, y: 434.4337}
+        - {x: -317.28812, y: 75.09318}
+        - {x: -126.99027, y: -439}
+        - {x: 70.22751, y: -439}
+        - {x: 97.907196, y: -425.9104}
+        - {x: 317.5, y: 30.175613}
+        - {x: 317.5, y: 424.06808}
+        - {x: 104.82712, y: 439}
+      - - {x: -40.49125, y: -4.376358}
+        - {x: -50.87113, y: 9.44443}
+        - {x: -57.791054, y: 9.44443}
+        - {x: -9.351599, y: 5.9892335}
+        - {x: -9.351599, y: 9.44443}
+        - {x: -23.191442, y: -7.8315554}
+        - {x: -33.571327, y: -4.376358}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Idle
@@ -119,7 +143,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -300.63037, y: 425}
+        - {x: -300.63037, y: -356.62723}
+        - {x: -227.97118, y: -425}
+        - {x: -58.43309, y: -425}
+        - {x: 45.36574, y: -394.6344}
+        - {x: 301, y: -121.673836}
+        - {x: 301, y: 313.681}
+        - {x: 197.60402, y: 425}
+      - - {x: -113.792465, y: 96.003586}
+        - {x: -110.332504, y: 96.003586}
+        - {x: -106.87254, y: 92.54839}
+        - {x: -82.65282, y: 89.09319}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Up_1st_Frame
@@ -132,7 +168,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -256.83304, y: 346.5}
+        - {x: -305.2725, y: 113.713264}
+        - {x: -305.2725, y: -342.37277}
+        - {x: -301.81253, y: -345.82794}
+        - {x: 127.222626, y: -345.82794}
+        - {x: 306, y: -52.136196}
+        - {x: 306, y: 258.83154}
+        - {x: 134.14255, y: 346.5}
+      - - {x: 78.783165, y: 13.512548}
+        - {x: 109.92282, y: 10.057351}
+        - {x: 99.54294, y: 3.1469572}
+        - {x: 78.783165, y: 6.6021543}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Up_2nd_Frame
@@ -145,7 +193,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -201.60545, y: 369.5}
+        - {x: -312.3242, y: 175.37636}
+        - {x: -312.3242, y: -259.9785}
+        - {x: -77.04685, y: -369.5}
+        - {x: 182.45023, y: -369.5}
+        - {x: 313, y: 6.0716906}
+        - {x: 313, y: 223.74911}
+        - {x: 230.88968, y: 369.5}
+      - - {x: 54.431667, y: 12.982085}
+        - {x: 106.33108, y: 16.437283}
+        - {x: 89.03127, y: 6.0716906}
+        - {x: 64.81155, y: 6.0716906}
       tessellationDetail: 0
     outline: []
   spritePackingTag: 

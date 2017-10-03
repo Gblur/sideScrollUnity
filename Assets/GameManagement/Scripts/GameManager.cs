@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public float waveWait = 6;
     public int enemyCount = 0;
     public float speed;
+    
+    
     // Use this for initialization
     void Start()
     {
@@ -44,6 +46,8 @@ public class GameManager : MonoBehaviour
             );
             enemies[enemyCount] = clone;
             enemyCount++;
+            
+
         }
         
     }

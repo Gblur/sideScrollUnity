@@ -41,7 +41,7 @@ public class EnemyHitReaction : MonoBehaviour {
 			// If explosion is set create an instance of explosion 
 			// and start animation for a lifetime.
 			if (explosion) {
-				this.explosionDeltaTime = now + explosion.GetComponent<ParticleSystem> ().startLifetime;
+				this.explosionDeltaTime = now + explosion.GetComponent<ParticleSystem>().startLifetime;
 				this.explosionInstance = Instantiate (
 					explosion, 
 					this.gameObject.transform.position, 
